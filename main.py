@@ -1,4 +1,6 @@
 from lingotto_fiere import LingottoFiere
+from stand import Stand
+
 
 def menu():
     print(f'\n--- MENU LINGOTTO FIERE ---')
@@ -20,6 +22,7 @@ def main():
         if scelta == "1":
             nuovo_nome = input("Inserisci il nuovo nome del centro fieristico: ")
             # TODO: Aggiorna il nome del centro fieristico
+            lingotto.nome = nuovo_nome
 
         elif scelta == "2":
             file_path = "dati_lingotto.csv"
@@ -46,7 +49,7 @@ def main():
             stand_ordinati = lingotto.stand_ordinati_per_prezzo()
             print("\n--- Stand ordinati per prezzo ---")
             for s in stand_ordinati:
-                print(s)
+                print(f"{s.codice} -Prezzo: {s.prezzo}")
 
         elif scelta == "6":
             print("Uscita dal programma.")
